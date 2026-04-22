@@ -1,42 +1,32 @@
-md
+# Inbox
 
-\# Inbox
+## Purpose
 
+The inbox is the landing zone for raw incoming material before it is synthesized into Betty Brain.
 
+This is not the final home for important information.
 
-This folder is the landing zone for raw inputs that have not yet been processed.
+## What belongs here
 
+- rough captures
+- imported notes
+- research dumps
+- meeting notes awaiting processing
+- project context drops
+- onboarding imports
 
+## What should happen next
 
-Examples:
+Inbox material should be reviewed by the inbox processing workflow and then:
 
-\- rough notes
+- synthesized into `2 - Live Logs/`
+- promoted into projects, areas, people, or identity docs when warranted
+- linked to related work
+- archived or left as reference once processed
 
-\- copied text
+## Rules
 
-\- captured ideas
-
-\- imported summaries
-
-\- documents awaiting classification
-
-\- temporary raw material for later synthesis
-
-
-
-\## Rules
-
-\- inbox is not the final home for important information
-
-\- items should later be:
-
-&#x20; - promoted into memory
-
-&#x20; - converted into project notes
-
-&#x20; - turned into skills or workflows
-
-&#x20; - archived if no longer useful
-
-\- avoid letting inbox become permanent clutter
-
+- prefer source-preserving imports over premature manual sorting
+- do not store secrets here intentionally
+- treat inbox contents as raw signal, not canonical truth
+- avoid letting important material sit here indefinitely

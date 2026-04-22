@@ -1,54 +1,64 @@
-\# Workflows
+# Workflows
 
+This folder contains Betty's repeatable operating workflows.
 
+## Active workflows
 
-This folder documents repeatable workflows used by Betty Brain.
+- `shared-brain-migration.md` — careful migration of useful assets into the shared brain
+- `inbox-processing.md` — turn raw inbox material into durable memory and linked context
+- `project-context-onboarding.md` — absorb new project context safely and coherently
+- `briefing.md` — concise status digest of what matters now
+- `weekly-review.md` — weekly pattern review and direction setting
+- `maintain.md` — periodic memory and system hygiene workflow
+- `query.md` — answer questions from the shared brain with inspectable context
+- `windows-health-security-review.md` — daily/recurring health and security review model for the Windows OpenClaw instance
+- `openclaw-failure-backstop-with-claude-code.md` — fallback diagnosis and repair pattern when OpenClaw itself is degraded
+- `claude-skill-intake-and-review.md` — classify and review Claude-side skills before promoting them
+- `shared-memory-architecture.md` — memory model and durable shared-brain design
+- `dream-cycle.md` — recurring memory-strengthening maintenance workflow
+- `dossier-pattern.md` — compiled-truth plus timeline structure for projects, areas, and people
 
+## Suggested schedule model
 
+- inbox processing: several times per day when inbox volume exists
+- briefing: mornings or on demand
+- dream cycle: nightly or several times per week
+- weekly review: weekly
+- maintain: weekly or fortnightly
+- query: on demand
+- project context onboarding: on demand
 
-A workflow is more than a skill.
+## Current live automation
 
-It describes:
+- live in OpenClaw: `briefing.md` daily at 07:00 Australia/Sydney
+- next recommended activations: `dream-cycle.md`, `weekly-review.md`, `maintain.md`, then `inbox-processing.md`
 
-\- when something should happen
+## Workflow categories
 
-\- who should do it
+### Foundation
 
-\- what files should be updated
+- shared memory architecture
+- migration
+- skill intake
+- project onboarding
 
-\- what output is expected
+### Runtime health
 
-\- what follow-up should happen
+- Windows health/security review
+- OpenClaw failure backstop with Claude Code
 
+### Memory maintenance
 
+- inbox processing
+- dream cycle
+- maintain
+- weekly review
+- briefing
+- query
 
-\## Example workflow types
+## Rules
 
-\- discovery of a new project
-
-\- migration of a document into the shared brain
-
-\- review of agent capabilities
-
-\- memory consolidation
-
-\- recurring business review
-
-\- architecture review for a software product
-
-
-
-\## Workflow design rules
-
-\- keep workflows explicit
-
-\- identify which agent owns each step
-
-\- identify where results should be stored
-
-\- avoid silent assumptions
-
-\- prefer small reliable workflows over complex fragile ones
-
-
-
+- keep workflows explicit
+- define owner and purpose clearly
+- avoid hidden tool assumptions
+- prefer stable repeatable steps over clever fragile automation

@@ -1,74 +1,55 @@
-\# Skills
+# Skills registry
 
+This folder tracks the skills Betty Brain expects across OpenClaw, Claude Code, and Obsidian.
 
+## Skill layers
 
-This folder tracks skills used by Betty Brain.
+### 1. Shared canonical skills
 
+These are the durable SOPs and playbooks that belong in the repo.
 
+Key docs:
 
-\## Skill types
+- [[9 - Operations/skills/skill-registry]]
+- [[9 - Operations/skills/shared-vs-specific-skill-model]]
+- [[9 - Operations/skills/skill-source-of-truth-and-path-precedence]]
+- [[9 - Operations/skills/runtime-wrapper-split-model]]
+- [[9 - Operations/skills/youtube-research-shared-sop]]
+- [[9 - Operations/skills/content-repurposing-shared-sop]]
 
+### 2. Runtime-specific wrappers
 
+These adapt canonical skills to a particular runtime:
 
-\### Shared skills
+- **OpenClaw wrappers** for cron, heartbeats, session orchestration, and tool usage
+- **Claude Code wrappers** for slash commands, MCPs, and project-local execution behavior
 
-These are:
+### 3. Human-facing skill surface
 
-\- tool-agnostic
+Obsidian is part of the skill layer too because it changes how the brain is explored and operated.
 
-\- reusable by multiple agents
+## Bundled Obsidian plugins
 
-\- written as SOPs, playbooks, or structured instructions
+| Plugin | What it does | Version | Required |
+|---|---|---|---|
+| `internetvin-terminal` | Terminal inside Obsidian | 1.1.2 | yes |
+| `agentfiles` | Browse and edit agent files from Obsidian | 0.7.2 | yes |
+| `obsidian-excalidraw-plugin` | Visual thinking and diagrams | 2.22.0 | yes |
 
-Examples:
+See [[ATTRIBUTION]] and `scripts/install-plugins.ps1` / `scripts/install_plugins.sh`.
 
-\- YouTube research workflow
+## Claude command layer
 
-\- content repurposing workflow
+Repo-local command prompts live in:
 
-\- architecture review workflow
+- `.claude/commands/`
 
-\- project discovery workflow
+These are entry points, not the source of truth. The source of truth remains the workflow and skill markdown in this repo.
 
+## Rules
 
-
-\### Claude-specific skills
-
-These depend on:
-
-\- Claude-only command syntax
-
-\- Claude sub-agent behavior
-
-\- Claude-only MCPs or harness features
-
-
-
-These should be documented here, but their implementation details may stay in Claude-specific locations.
-
-
-
-\### OpenClaw-specific skills
-
-These depend on:
-
-\- OpenClaw heartbeats
-
-\- cron jobs
-
-\- OpenClaw session orchestration
-
-\- OpenClaw runtime assumptions
-
-
-
-\## Rules
-
-\- shared skills should be written in tool-agnostic language where possible
-
-\- tool-specific wrappers should be documented as wrappers, not mistaken for universal skills
-
-\- do not assume Claude skills can run directly in OpenClaw
-
-\- when a skill is duplicated across systems, identify one source of truth
-
+- shared logic lives in the repo
+- wrappers stay thin
+- do not treat Claude-only behavior as portable by default
+- do not rely on app-bundled paths as the canonical source of truth
+- never store secrets in skill docs

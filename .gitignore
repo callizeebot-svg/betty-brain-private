@@ -23,9 +23,17 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
-# Never commit tool internals
-.claude/
+# Never commit tool internals except repo-local Claude commands
+.claude/*
+!.claude/commands/
+!.claude/commands/**
 .openclaw/
 
 # Sensitive setup scripts until audited
 01_Setup_Scripts/
+
+# Accidental nested-vault files if the wrong subfolder gets opened in Obsidian
+Vault/.obsidian/
+Vault/*.canvas
+Vault/*.base
+Vault/20??-??-??.md
