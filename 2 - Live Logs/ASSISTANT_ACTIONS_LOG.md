@@ -27,3 +27,4 @@ Append-only record of meaningful actions Betty takes on Cally's behalf.
 - Added explicit workflow guidance for context budgeting, helper-session strategy, and git-based versioning of important setup and durable memory changes.
 - Tightened attribution wording so gbrain is credited accurately as an upstream reference and optional retrieval layer rather than overstated as the only verified live runtime path.
 - Researched YouTube material on agent memory, selected a strong 10-video set, compared the patterns against Betty Brain, saved a research note in `7 - Resources/agent-memory-youtube-study-2026-04-23.md`, and generated a shareable Control UI study page with a report, tables, and knowledge graph.
+- Added a startup-safe `SKILL SURFACE.md` so Betty can begin sessions with a lightweight map of reusable skills/wrappers without loading every full skill doc, and added `project-storage-model.md` to clarify what belongs in Betty Brain versus a separate product repo.

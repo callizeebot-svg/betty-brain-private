@@ -4,6 +4,10 @@ This folder tracks the skills Betty Brain expects across OpenClaw, Claude Code, 
 
 ## Skill layers
 
+Startup-safe overview:
+
+- [[SKILL SURFACE]]
+
 ### 1. Shared canonical skills
 
 These are the durable SOPs and playbooks that belong in the repo.

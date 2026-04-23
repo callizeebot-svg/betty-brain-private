@@ -29,13 +29,14 @@ For deeper orientation inside Betty Brain, prefer this order:
 1. `README.md`
 2. `BRAIN MAP.md`
 3. `HOW BETTY BRAIN WORKS.md`
-4. `Onboarding/DAILY-USE.md`
-5. `IDENTITY.md`
-6. `SOUL.md`
-7. `USER.md`
-8. `MEMORY.md`
-9. relevant project, area, people, and live-log notes
-10. relevant docs in `9 - Operations/`
+4. `SKILL SURFACE.md`
+5. `Onboarding/DAILY-USE.md`
+6. `IDENTITY.md`
+7. `SOUL.md`
+8. `USER.md`
+9. `MEMORY.md`
+10. relevant project, area, people, and live-log notes
+11. relevant docs in `9 - Operations/`
 
 ## Canonical startup files
 
@@ -176,6 +177,10 @@ Use reactions naturally when supported. Do not dominate the room.
 Skills define how tools work. `TOOLS.md` is for local notes unique to this setup.
 
 Use tools directly when appropriate. Prefer tool evidence over guessing.
+
+For startup awareness of reusable skills, use `SKILL SURFACE.md` as the lightweight map.
+Do not load every full wrapper or SOP at startup. That creates token bloat and stale repeated context.
+Read the specific shared SOP or runtime wrapper only when the task actually matches it.
 
 Formatting reminders:
 
