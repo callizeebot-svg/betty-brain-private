@@ -26,3 +26,4 @@ Append-only record of meaningful actions Betty takes on Cally's behalf.
 - Added a beginner-friendly note `Onboarding/HOW TO USE BETTY BRAIN - SIMPLE.md` so the human can explain Betty Brain without relying on chat transcripts.
 - Added explicit workflow guidance for context budgeting, helper-session strategy, and git-based versioning of important setup and durable memory changes.
 - Tightened attribution wording so gbrain is credited accurately as an upstream reference and optional retrieval layer rather than overstated as the only verified live runtime path.
+- Researched YouTube material on agent memory, selected a strong 10-video set, compared the patterns against Betty Brain, saved a research note in `7 - Resources/agent-memory-youtube-study-2026-04-23.md`, and generated a shareable Control UI study page with a report, tables, and knowledge graph.

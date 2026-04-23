@@ -10,6 +10,7 @@
 output/
 raw_data/
 transcripts/
+.firecrawl/
 *.vtt
 *.log
 
