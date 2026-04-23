@@ -1,3 +1,8 @@
+---
+aliases:
+  - inbox processing
+---
+
 # Inbox Processing
 
 ## Purpose
@@ -6,54 +11,58 @@ Process raw incoming material from `.inbox/` into Betty's durable memory system.
 
 This workflow preserves the Evolving Brain principle that raw captures should be synthesized, not merely filed.
 
-## Goals
+## Current state
 
-- turn raw captures into useful memory
-- extract meaningful actions, decisions, and research findings
-- connect incoming material to projects, areas, people, and operations
-- keep the inbox from becoming a graveyard
+- **Documented:** yes
+- **Useful on demand right now:** yes
+- **Live recurring automation:** not yet
+- **Next maturity step:** make this the first real high-signal recurring workflow once there is steady inbox volume
 
-## Inputs
+## What qualifies for the inbox
 
-Typical inputs include:
+Use `.inbox/` for things that are any of these:
 
-- onboarding imports
-- meeting notes
-- research dumps
-- pasted context from the user
-- project documents dropped for review
-- raw notes from external tools
+- raw
+- imported
+- unsorted
+- not yet fully understood
+- likely useful, but not yet durable enough for a final home
 
-## Outputs
+## Output routing
 
-Depending on the material, create or update:
+| If the processed result becomes... | Put it here |
+|---|---|
+| a dated action / decision / learning / event | `2 - Live Logs/` |
+| stable project understanding | `5 - Projects/` |
+| durable ongoing area context | `6 - Areas/` |
+| reference material | `7 - Resources/` |
+| operating rule, workflow, schedule, or runtime guidance | `9 - Operations/` |
 
-- `2 - Live Logs/ACTIONS_LOG.md`
-- `2 - Live Logs/ASSISTANT_ACTIONS_LOG.md` when Betty acted
-- project current-state notes
-- area notes
-- people notes
-- operations docs
-- a processing note in `9 - Operations/runs/` if useful
+See also [[9 - Operations/workflows/capture-routing]].
 
 ## Processing steps
 
 1. Read the inbox item and identify what kind of signal it contains
 2. Extract the parts that are actually worth keeping
 3. Identify links to existing projects, areas, people, or operations context
-4. Append meaningful events or findings to live logs
-5. Promote stable knowledge into durable pages where warranted
+4. Route the durable result to the right destination
+5. Append meaningful dated signal to live logs where appropriate
 6. Leave a clear trace of what was processed
-7. Mark or move the raw material according to the chosen inbox convention later
+7. Mark, archive, or leave the raw item according to confidence and usefulness
 
-## Classification prompts
+## Done definition
 
-When processing, ask:
+An inbox item is processed when:
 
-- is this raw evidence, a durable fact, or a transient note?
-- does it belong in logs, a project page, an area page, or a person page?
-- does it change what Betty currently believes?
-- does it suggest a follow-up action or review?
+- the durable signal has been routed somewhere better than the inbox
+- any meaningful dated event has been logged
+- the remaining raw material is either archived, intentionally retained, or explicitly ignored
+
+## Archive / discard guidance
+
+- keep the raw item if it may still matter as evidence
+- archive it when the durable extraction is complete
+- discard only when it is low-signal noise and no longer useful
 
 ## Rules
 
@@ -67,3 +76,10 @@ When processing, ask:
 
 - on demand while the system is still being built
 - later: scheduled several times per day if inbox volume warrants it
+
+## Related notes
+
+- [[.inbox/README]]
+- [[9 - Operations/workflows/capture-routing]]
+- [[2 - Live Logs/README]]
+- [[5 - Projects/Betty Brain]]

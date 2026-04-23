@@ -1,8 +1,19 @@
+---
+aliases:
+  - weekly review
+---
+
 # Weekly Review
 
 ## Purpose
 
 Look back across the past week, identify meaningful patterns, and decide what should change in Betty Brain.
+
+## Current state
+
+- **Documented:** yes
+- **Live recurring automation:** not yet
+- **Recommended activation timing:** after inbox processing is producing enough weekly signal to summarize well
 
 ## Goals
 

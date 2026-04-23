@@ -16,3 +16,13 @@ Append-only record of meaningful actions Betty takes on Cally's behalf.
 - Installed Obsidian on Windows, launched the `betty-brain-private` vault, opened the vault hub note, and confirmed the app is running.
 - Added `BRAIN MAP.md` as a graph-friendly human entry point so Obsidian starts with a navigable hub instead of scattered folders.
 - Created the first live OpenClaw cron job for Betty Brain: a daily 07:00 Australia/Sydney morning briefing, and updated the schedule docs so they reflect what is live vs still planned.
+- Improved the repo based on critique: added practical docs for capture routing, daily use, migration control, a real Betty Brain project dossier, and stronger README/BRAIN MAP guidance.
+- Normalized workflow usage toward hyphenated canonical filenames, converted spaced duplicates into compatibility bridge notes, and made the workflow layer more honest about what is live versus planned.
+- Added a second live OpenClaw recurring workflow: weekly Windows health/security review on Sunday at 05:00 Australia/Sydney.
+
+## 2026-04-23
+
+- Clarified the memory model by documenting that `3 - Daily Journal/` is for reflective day-stream notes while `2 - Live Logs/` remains the operational event trail.
+- Added a beginner-friendly note `Onboarding/HOW TO USE BETTY BRAIN - SIMPLE.md` so the human can explain Betty Brain without relying on chat transcripts.
+- Added explicit workflow guidance for context budgeting, helper-session strategy, and git-based versioning of important setup and durable memory changes.
+- Tightened attribution wording so gbrain is credited accurately as an upstream reference and optional retrieval layer rather than overstated as the only verified live runtime path.

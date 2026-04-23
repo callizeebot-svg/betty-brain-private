@@ -11,24 +11,26 @@ The Evolving Brain borrows ideas, patterns, and sometimes prompt text from sever
 **Upstream doc pins:** `e9f3c9c24d36a8bbef85ea55411cfe3001d342a3` (2026-04-10) in `9 - Operations/upstream/gbrain/`
 **Runtime install:** `gbrain 0.5.0` installed via `bun install -g github:garrytan/gbrain` (commit `27eb87f`, 2026-04-10)
 
-**We now run gbrain as our retrieval layer** (not just track its docs). The architecture:
+**Current Betty status:** gbrain is credited, documented, and tracked as a strong upstream reference, but it is **not currently the only verified live retrieval path** for Betty. Betty's current proven runtime remains markdown-first with direct file reads, repo docs, and workflow-guided retrieval. gbrain remains a valid future/optional retrieval layer, not a required dependency for Betty to work.
+
+The intended / reference architecture:
 
 - **Vault (this repo)** is the canonical source of truth. Every markdown file, every entity page, every log entry lives in git.
-- **gbrain** indexes the vault into Postgres + pgvector via the user's own Supabase project. Provides hybrid keyword + vector search, link graph traversal, and an MCP server.
-- **Sync direction** is vault → gbrain. Writes go to markdown files; `gbrain sync` is called at the end of the inbox processor workflow to push new/changed files into the index. We never write to gbrain as the primary path.
-- **If gbrain disappears**, the vault still works — retrieval falls back to grep via the `query` workflow. No data is lost, just some retrieval speed / semantic capability.
+- **gbrain** can index the vault into Postgres + pgvector via the user's own Supabase project. It provides hybrid keyword + vector search, link graph traversal, and an MCP server when deliberately enabled.
+- **Sync direction** should remain vault → gbrain. Writes belong in markdown first. If gbrain is used, it should index the vault rather than replace it.
+- **If gbrain disappears**, the vault still works — retrieval falls back to repo search, direct note reads, and the `query` workflow. No durable knowledge is lost.
 
-**What we borrowed (in addition to running the tool):**
+**What we borrowed:**
 - The "compiled truth on top, append-only timeline on bottom" entity page pattern (adopted in `People/`, `5 - Projects/`, `6 - Areas/` templates)
 - The "dream cycle" nightly maintenance concept (adopted as `9 - Operations/workflows/dream cycle.md`)
 - The shape of the skillpack — fat markdown prompts describing HOW an agent uses the brain — validated our `9 - Operations/workflows/` approach
 - The recommended entity schema: persistent IDs, source attribution, citations (adopted in inbox processor rules and entity templates)
 - The `query`, `maintain`, `briefing`, `migrate` workflow patterns (adopted as workflows with our own adaptations)
-- The SQLite engine design as the planned upgrade path for Phase 6 search
+- The SQLite engine design as a possible later upgrade path for richer search
 
-**What we explicitly did NOT borrow:**
+**What we explicitly did NOT make mandatory in current Betty:**
 - gbrain's runtime code (TypeScript CLI, MCP server)
-- The Postgres + pgvector dependency (explicit design choice to stay markdown-only until scale demands otherwise)
+- The Postgres + pgvector dependency as a hard requirement (explicit design choice to stay markdown-first until scale demands otherwise)
 - The OpenClaw/Hermes agent framework coupling
 - The hardcoded person/company/deal/idea entity types (we use PARA + organic emergence)
 

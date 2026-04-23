@@ -22,6 +22,10 @@ __pycache__/
 # OS/editor
 .DS_Store
 Thumbs.db
+.obsidian/workspace.json
+.obsidian/graph.json
+.obsidian/plugins/obsidian-excalidraw-plugin/data.json
+.obsidian/plugins/internetvin-terminal/pty-helper.py
 
 # Never commit tool internals except repo-local Claude commands
 .claude/*

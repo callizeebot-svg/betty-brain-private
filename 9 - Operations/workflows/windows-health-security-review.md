@@ -1,8 +1,20 @@
+---
+aliases:
+  - health security review
+  - windows health security review
+---
+
 # Windows Health and Security Review Workflow
 
 ## Purpose
 
 Define a safe recurring review loop for the Windows OpenClaw instance that uses OpenClaw for orchestration and Claude Code for diagnosis.
+
+## Current state
+
+- **Documented:** yes
+- **Live recurring automation:** yes
+- **Current live schedule:** Sunday 05:00 Australia/Sydney
 
 ## Ownership model
 
@@ -25,7 +37,7 @@ Define a safe recurring review loop for the Windows OpenClaw instance that uses 
 
 ## Recommended cadence
 
-### Daily
+### Daily light review
 
 A lightweight daily review should:
 
@@ -34,7 +46,7 @@ A lightweight daily review should:
 3. summarize status
 4. ask Claude Code to classify issues and recommend next action
 
-### Weekly
+### Weekly deep review
 
 A deeper weekly review should:
 
@@ -147,7 +159,7 @@ If a fix is needed, present:
 
 ## Why this model
 
-This gives Betty a daily review loop without unsafe autonomy.
+This gives Betty a recurring review loop without unsafe autonomy.
 
 OpenClaw remains the orchestrator and memory owner.
 Claude Code acts as a bounded diagnostic and repair specialist.

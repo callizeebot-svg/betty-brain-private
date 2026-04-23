@@ -7,6 +7,9 @@ This folder is the living memory stream of Betty Brain.
 It is not just a dumping ground for notes.
 It is where raw signal becomes durable continuity.
 
+If `3 - Daily Journal/` is the reflective day-stream, `2 - Live Logs/` is the operational evidence trail.
+Use Live Logs for what happened, changed, or was decided — not for every rough thought.
+
 Live Logs should capture:
 
 - meaningful actions

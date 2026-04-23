@@ -1,19 +1,21 @@
+---
+aliases:
+  - dream cycle
+---
+
 # Dream Cycle
 
 ## Purpose
 
-Nightly maintenance workflow for Betty Brain.
+Nightly or periodic maintenance workflow for Betty Brain.
 
 The dream cycle is how Betty keeps memory strong instead of merely accumulating files.
 
-It should preserve the strongest Evolving Brain idea:
+## Current state
 
-- compile
-- connect
-- reconcile
-- strengthen
-
-rather than just file things away.
+- **Documented:** yes
+- **Live recurring automation:** not yet
+- **Recommended activation timing:** after inbox processing and weekly review feel stable enough to produce useful material to synthesize
 
 ## Goals
 

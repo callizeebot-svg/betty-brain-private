@@ -6,9 +6,12 @@ Related notes:
 
 - [[README]]
 - [[BRAIN MAP]]
-- [[MASTER PLAN]]
-- [[9 - Operations/README]]
+- [[Onboarding/DAILY-USE]]
+- [[Onboarding/HOW TO USE BETTY BRAIN - SIMPLE]]
+- [[9 - Operations/workflows/capture-routing]]
+- [[9 - Operations/workflows/context-budgeting-and-session-strategy]]
 - [[9 - Operations/schedule]]
+- [[5 - Projects/Betty Brain]]
 
 ---
 
@@ -31,6 +34,13 @@ Different tools play different roles:
 - [[9 - Operations/capabilities/claude-code|Claude Code]] = specialist execution
 - Obsidian = human reading, editing, graphing
 
+One more practical rule matters now:
+
+- keep the main session strategic and fairly lean
+- load targeted files instead of dragging the whole repo into context
+- spawn focused helper sessions for long, narrow, or code-heavy work
+- commit important setup and memory changes so the brain has inspectable versions
+
 ---
 
 ## 2. The most important concept: raw notes are not the brain
@@ -52,52 +62,20 @@ That means:
 
 ---
 
-## 3. Where information should go
+## 3. The default routing rule
 
-### `.inbox/`
+The daily question is usually:
 
-Temporary intake.
-Use it for new raw material.
+> where does this go?
 
-Example:
+The default answer is simple:
 
-- rough ideas
-- copied chat exports
-- dumped notes
-- source material to be processed later
+- if it is raw or uncertain -> `.inbox/`
+- if it is a dated event or decision -> `2 - Live Logs/`
+- if it is durable project understanding -> `5 - Projects/`
+- if it is an operating rule or schedule -> `9 - Operations/`
 
-### `2 - Live Logs/`
-
-Append-only memory traces.
-Use it for what happened.
-
-Example:
-
-- actions taken
-- decisions made
-- lessons learned
-- reflections worth preserving
-
-### `5 - Projects/`, `6 - Areas/`, `People/`
-
-Durable structured memory.
-Use these for the current best understanding of a thing.
-
-Example:
-
-- a project page with goals, status, risks, next actions
-- a people page with relationship context and timeline notes
-- an area page for something ongoing like health, finance, content, or systems
-
-### `8 - North Star/`
-
-Strategic direction.
-Use it to judge whether the system is making life and work better.
-
-### `9 - Operations/`
-
-The runtime layer.
-This is where the brain learns how to run itself.
+If unsure, use [[9 - Operations/workflows/capture-routing]].
 
 ---
 
@@ -178,10 +156,10 @@ That means the graph is currently strongest around:
 
 - [[BRAIN MAP]]
 - [[HOW BETTY BRAIN WORKS]]
+- [[5 - Projects/Betty Brain]]
 - [[9 - Operations/README]]
 - [[9 - Operations/schedule]]
 - workflow notes
-- README hub notes
 
 The graph becomes much more valuable when these increase:
 
@@ -196,10 +174,6 @@ The graph becomes much more valuable when these increase:
 Expect a **skeleton graph**.
 Not a mature galaxy yet.
 
-### Good expectation later
-
-Once Betty is processing real material regularly, the graph should become much richer and more interesting.
-
 ---
 
 ## 8. Concrete examples
@@ -213,9 +187,8 @@ You say:
 Good outcome:
 
 - raw note captured in `.inbox/`
-- [[2 - Live Logs/ACTIONS_LOG]] or another relevant log gets a dated entry
-- the relevant planning note reflects the decision
-- maybe a shared SOP or project note gets updated
+- relevant dated signal lands in `2 - Live Logs/`
+- [[5 - Projects/Betty Brain]] or another durable note reflects the decision if it changes current state
 
 ### Example B: project onboarding
 
@@ -255,12 +228,14 @@ Then Betty summarizes:
 - Obsidian config and plugins are present
 - Claude command layer is present
 - first OpenClaw cron exists: daily morning briefing
+- weekly health/security review is now also live
+- practical routing and daily-use docs now exist
 
 ### Not fully alive yet
 
 - recurring inbox processing
 - dream cycle as a live automation
-- weekly review as live automation
+- weekly review as a live automation
 - lots of real processed memory content
 
 ---
@@ -283,9 +258,9 @@ That subfolder is only for credentials and setup support.
 
 1. [[BRAIN MAP]]
 2. [[HOW BETTY BRAIN WORKS]]
-3. [[9 - Operations/schedule]]
-4. [[9 - Operations/workflows/README]]
-5. [[8 - North Star/NORTH STAR]]
+3. [[Onboarding/DAILY-USE]]
+4. [[9 - Operations/schedule]]
+5. [[5 - Projects/Betty Brain]]
 6. local graph of [[BRAIN MAP]]
 
 ---
@@ -296,3 +271,9 @@ The setup is no longer the main blocker.
 The main blocker now is **feeding Betty real material and processing it into durable linked notes**.
 
 That is what turns this from a nice repo into a real evolving brain.
+
+To do that sustainably, Betty also needs:
+
+- a clean distinction between raw daily notes and operational logs
+- cost-aware session/context management
+- versioned setup and memory updates in git

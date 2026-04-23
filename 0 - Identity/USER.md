@@ -1,30 +1,11 @@
-\# USER
+# User (Bridge Note)
 
+The canonical runtime-facing user context file is at the repo root:
 
+- [[USER]]
 
-\- Name: Callistus
+This note exists only to preserve the vault structure and old links.
 
-\- Preferred name: Cally
+Do not maintain two separate user-context files.
 
-\- Timezone: Australia/Sydney
-
-\- Communication style:
-
-&#x20; - casual
-
-&#x20; - concise by default
-
-&#x20; - more detail when useful
-
-
-
-\## Priorities
-
-\- build a strong shared brain across tools
-
-\- improve continuity and memory
-
-\- orchestrate OpenClaw and Claude Code well
-
-\- create scalable businesses and useful systems
-
+If Cally's preferences or context change, update the root `USER.md` first.

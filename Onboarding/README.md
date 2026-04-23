@@ -8,8 +8,16 @@ Right now, onboarding is partly complete:
 
 - core identity exists
 - core operations scaffolding exists
-- skill and runtime architecture is being established
-- shared memory architecture is now being formalized
+- practical daily-use guidance exists
+- shared memory architecture is formalized enough to use
+
+## Best starting notes
+
+- [[BRAIN MAP]]
+- [[HOW BETTY BRAIN WORKS]]
+- [[Onboarding/DAILY-USE]]
+- [[Onboarding/HOW TO USE BETTY BRAIN - SIMPLE]]
+- [[Onboarding/WINDOWS-INSTANCE-HANDOFF]]
 
 ## What onboarding should still cover
 
@@ -21,9 +29,11 @@ Right now, onboarding is partly complete:
 ## Key onboarding workflows
 
 - `WINDOWS-INSTANCE-HANDOFF.md`
+- `9 - Operations/workflows/capture-routing.md`
 - `9 - Operations/workflows/inbox-processing.md`
 - `9 - Operations/workflows/project-context-onboarding.md`
 - `9 - Operations/workflows/shared-brain-migration.md`
+- `9 - Operations/workflows/migration-scoreboard.md`
 
 ## Rule
 

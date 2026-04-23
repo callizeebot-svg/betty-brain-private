@@ -1,66 +1,74 @@
-\# Delegation Rules
+# Delegation Rules
 
+## Core principle
 
+Use the best available tool and model for the job while preserving shared memory and minimizing confusion.
 
-\## Core principle
+## Default routing
 
-Use the best available tool for the job while preserving shared memory and minimizing confusion.
+- **Claude Code**
+  - code generation
+  - refactoring
+  - architecture drafting
+  - deeper technical investigation
+  - detailed technical docs
 
+- **OpenClaw / Betty**
+  - long-term memory
+  - orchestration
+  - recurring workflows
+  - delegation decisions
+  - continuity across sessions and projects
 
-
-\## Default routing
-
-\- Claude Code:
-
-&#x20; - code generation
-
-&#x20; - refactoring
-
-&#x20; - architecture drafting
-
-&#x20; - MCP-assisted research
-
-&#x20; - detailed technical docs
-
-\- OpenClaw:
-
-&#x20; - long-term memory
-
-&#x20; - orchestration
-
-&#x20; - recurring workflows
-
-&#x20; - delegation decisions
-
-&#x20; - continuity across sessions and projects
-
-
-
-\## Shared work
+## Shared work
 
 Both may contribute to:
 
-\- project planning
+- project planning
+- SOP improvement
+- research synthesis
+- business design
+- writing aligned to brand voice
 
-\- SOP improvement
+## Model and provider selection
 
-\- research synthesis
+- default Betty to `openai-codex/gpt-5.4` when available and authenticated
+- pick models based on task, not habit
+- use stronger reasoning/coding models for complex debugging, architecture, and ambiguous multi-step work
+- use faster or cheaper models for lightweight classification, cleanup, rote transforms, and narrow follow-ups
+- account for actual provider availability and authentication before routing work
+- prefer one good helper over many overlapping helpers
 
-\- business design
+## Context and cost discipline
 
-\- writing aligned to brand voice
+- keep Betty's main session focused on orchestration, memory stewardship, and final synthesis
+- prefer targeted file reads over dragging large unrelated context forward
+- for long, narrow, code-heavy, or research-heavy work, prefer a fresh helper session with bounded context
+- bring back concise outputs and write durable outcomes into the shared brain
+- monitor context load and compaction pressure instead of waiting for sessions to become bloated
 
+## Shared workspace rule
 
+- helpers should usually share Betty Brain as their workspace so memory stays coherent
+- give helpers role-specific identity, task scope, tools, and model choices without splitting the canonical brain
+- Betty may create helpers dynamically based on the task instead of relying on a fixed set of standing agents
+- only use separate workspaces when isolation is genuinely useful
 
-\## Guardrails
+## Authority boundaries
 
-\- avoid duplicate edits to the same memory file at the same time
+- Betty is the steward of the whole house and the final gate for identity, security posture, and durable memory policy
+- helpers may propose or draft changes to core files, but should not become the final authority over them
+- root startup files and security-sensitive guidance should be treated as Betty-governed files
+- when in doubt, helpers should write task outputs or proposals, and Betty should decide what becomes canonical
 
-\- do not migrate secrets into the shared repo
+## Guardrails
 
-\- do not assume Claude-specific skills work in OpenClaw unchanged
-
-\- convert shared skills into tool-agnostic SOPs where possible
-
-\- keep agent-specific wrappers separate from shared logic
-
+- avoid duplicate edits to the same memory file at the same time
+- do not migrate secrets into the shared repo
+- do not assume runtime-specific skills work unchanged everywhere
+- convert shared skills into tool-agnostic SOPs where possible
+- keep agent-specific wrappers separate from shared logic
+- restrict helper edits to the smallest meaningful scope
+- prefer proposal -> review -> apply for identity and policy changes
+- log meaningful delegated outcomes back into the shared brain
+- commit important durable changes after review so the brain has version history

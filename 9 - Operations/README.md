@@ -1,86 +1,56 @@
-\# Operations
-
-
+# Operations
 
 This folder is the operational layer of Betty Brain.
 
-
-
 It exists to help OpenClaw, Claude Code, and future agents understand:
 
-\- how the system runs
+- how the system runs
+- what workflows exist
+- what connectors exist
+- what capabilities each agent has
+- how delegation decisions should be made
+- what runtime assumptions and boundaries exist
 
-\- what workflows exist
-
-\- what connectors exist
-
-\- what capabilities each agent has
-
-\- how delegation decisions should be made
-
-\- what runtime assumptions and boundaries exist
-
-
-
-\## Purpose
+## Purpose
 
 Operations is not long-term personal memory.
-
 It is the runtime and coordination layer.
 
+## Start with these notes
 
+- [[9 - Operations/schedule]]
+- [[9 - Operations/workflows/README]]
+- [[9 - Operations/workflows/capture-routing]]
+- [[9 - Operations/workflows/inbox-processing]]
+- [[9 - Operations/workflows/context-budgeting-and-session-strategy]]
+- [[9 - Operations/workflows/versioning-and-sync]]
+- [[9 - Operations/workflows/health-security-review]]
+- [[9 - Operations/workflows/migration-scoreboard]]
 
-\## Key subfolders
+## Key subfolders
 
-\- `skills/` — shared and agent-specific skill definitions or notes
+- `skills/` — shared and agent-specific skill definitions or notes
+- `workflows/` — repeatable operating flows
+- `connectors/` — MCPs, integrations, and external system notes
+- `capabilities/` — what each tool/agent can do
+- `delegation/` — task-routing rules
+- `runs/` — operational run history
+- `upstream/` — pinned references to upstream sources
 
-\- `workflows/` — repeatable operating flows
+## Current practical focus
 
-\- `connectors/` — MCPs, integrations, and external system notes
+The current operations goal is not more abstraction.
+It is making the most important workflows real and repeatable:
 
-\- `capabilities/` — what each tool/agent can do
+1. route new material correctly
+2. process inbox items into durable memory
+3. keep the schedule honest about what is live vs planned
+4. build recurring health, review, and synthesis habits over time
 
-\- `delegation/` — task-routing rules
+## Rules
 
-\- `runs/` — optional logs of meaningful operations
-
-\- `upstream/` — notes or pinned references to upstream sources
-
-
-
-\## New foundation docs
-
-\- `skills/shared-vs-specific-skill-model.md` — classification model for shared, Claude-specific, OpenClaw-specific, and local-only skills
-
-\- `skills/skill-source-of-truth-and-path-precedence.md` — update-safe path and precedence model for canonical skill logic and runtime wrappers
-
-\- `skills/skill-registry.md` — registry of canonical skill docs and runtime wrapper locations
-
-\- `skills/youtube-research-shared-sop.md` — first shared canonical research workflow extracted from Claude-side implementation
-
-\- `skills/content-repurposing-shared-sop.md` — shared canonical repurposing workflow extracted from Claude-side implementation
-
-\- `skills/runtime-wrapper-split-model.md` — how shared canonical skills split into Claude and OpenClaw runtime wrappers
-
-\- `connectors/claude-code-inventory.md` — current Claude Code paths, assets, role, and boundaries
-
-\- `workflows/windows-health-security-review.md` — safe daily review model using OpenClaw + Claude Code
-
-\- `workflows/claude-skill-intake-and-review.md` — intake path for future Claude skills
-
-\- `workflows/shared-memory-architecture.md` — durable shared memory model across OpenClaw and Claude Code
-
-\- `workflows/dream-cycle.md` — recurring memory-strengthening maintenance workflow
-
-\- `workflows/openclaw-failure-backstop-with-claude-code.md` — fallback model for diagnosing or repairing OpenClaw when OpenClaw itself is degraded
-
-\## Rules
-
-\- do not store secrets here
-
-\- prefer stable documentation over noisy logs
-
-\- clearly separate shared logic from tool-specific wrappers
-
-\- update this area when an agent gains or loses important capability
-
+- do not store secrets here
+- prefer stable documentation over noisy logs
+- clearly separate shared logic from tool-specific wrappers
+- update this area when an agent gains or loses important capability
+- avoid claiming a workflow is live unless it is actually live

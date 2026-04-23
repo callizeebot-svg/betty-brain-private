@@ -2,59 +2,60 @@
 
 This folder contains Betty's repeatable operating workflows.
 
-## Active workflows
+## Canonical naming rule
 
-- `shared-brain-migration.md` — careful migration of useful assets into the shared brain
+Hyphenated workflow filenames are the canonical ones.
+
+Examples:
+
+- `inbox-processing.md`
+- `dream-cycle.md`
+- `weekly-review.md`
+
+Any spaced variants should be treated as legacy aliases only.
+
+## Core practical workflows
+
+- `capture-routing.md` — fast answer to “where does this go?”
 - `inbox-processing.md` — turn raw inbox material into durable memory and linked context
-- `project-context-onboarding.md` — absorb new project context safely and coherently
 - `briefing.md` — concise status digest of what matters now
 - `weekly-review.md` — weekly pattern review and direction setting
-- `maintain.md` — periodic memory and system hygiene workflow
-- `query.md` — answer questions from the shared brain with inspectable context
-- `windows-health-security-review.md` — daily/recurring health and security review model for the Windows OpenClaw instance
-- `openclaw-failure-backstop-with-claude-code.md` — fallback diagnosis and repair pattern when OpenClaw itself is degraded
-- `claude-skill-intake-and-review.md` — classify and review Claude-side skills before promoting them
-- `shared-memory-architecture.md` — memory model and durable shared-brain design
 - `dream-cycle.md` — recurring memory-strengthening maintenance workflow
-- `dossier-pattern.md` — compiled-truth plus timeline structure for projects, areas, and people
-
-## Suggested schedule model
-
-- inbox processing: several times per day when inbox volume exists
-- briefing: mornings or on demand
-- dream cycle: nightly or several times per week
-- weekly review: weekly
-- maintain: weekly or fortnightly
-- query: on demand
-- project context onboarding: on demand
+- `health-security-review.md` — simple entry point to the current health/security review model
+- `windows-health-security-review.md` — detailed Windows-specific health/security workflow
+- `project-context-onboarding.md` — absorb new project context safely and coherently
+- `shared-brain-migration.md` — careful migration of useful assets into the shared brain
+- `migration-scoreboard.md` — keep migration visible and controlled
+- `query.md` — answer questions from the shared brain with inspectable context
+- `maintain.md` — periodic memory and system hygiene workflow
+- `context-budgeting-and-session-strategy.md` — keep main-context lean, use targeted retrieval, and delegate deep work into fresh sessions
+- `versioning-and-sync.md` — commit and push important setup and durable memory changes safely
 
 ## Current live automation
 
 - live in OpenClaw: `briefing.md` daily at 07:00 Australia/Sydney
-- next recommended activations: `dream-cycle.md`, `weekly-review.md`, `maintain.md`, then `inbox-processing.md`
+- live in OpenClaw: `windows-health-security-review.md` weekly on Sunday at 05:00 Australia/Sydney
 
-## Workflow categories
+## Next recommended activations
 
-### Foundation
+1. `inbox-processing.md`
+2. `weekly-review.md`
+3. `dream-cycle.md`
 
-- shared memory architecture
-- migration
-- skill intake
-- project onboarding
+## Operating stance
 
-### Runtime health
+Betty should prefer:
 
-- Windows health/security review
-- OpenClaw failure backstop with Claude Code
+- a few real recurring workflows
+- clear routing rules
+- visible run history
+- honest live-vs-planned distinctions
 
-### Memory maintenance
+Betty should avoid:
 
-- inbox processing
-- dream cycle
-- maintain
-- weekly review
-- briefing
-- query
+- lots of pretty but inactive workflow promises
+- duplicate sources of truth
+- fragile automation without clear ownership
 
 ## Rules
 
@@ -62,3 +63,4 @@ This folder contains Betty's repeatable operating workflows.
 - define owner and purpose clearly
 - avoid hidden tool assumptions
 - prefer stable repeatable steps over clever fragile automation
+- when in doubt, make the workflow more practical, not more abstract
