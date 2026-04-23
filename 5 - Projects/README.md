@@ -33,3 +33,9 @@ See also:
 Project understanding belongs here.
 
 The actual shipped product/codebase often belongs in its own separate local repo and GitHub repo, with this folder holding the durable dossier, decisions, references, and links.
+
+If a project accumulates important reports, prefer:
+
+- `5 - Projects/<Project>/reports/<report-name>/`
+
+with files such as `report.md`, `index.html`, and any related assets grouped together.

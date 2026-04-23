@@ -26,6 +26,7 @@ Store in Betty Brain:
 
 - project dossiers in `5 - Projects/`
 - research in `7 - Resources/` when it is reusable beyond one narrow build step
+- important reports in per-report folders under `7 - Resources/reports/` or `5 - Projects/<Project>/reports/`
 - operational notes in `9 - Operations/`
 - logs of major changes in `2 - Live Logs/`
 
@@ -90,6 +91,23 @@ Use `7 - Resources/` when the asset is reusable reference material, such as:
 - cross-project technical references
 
 Do **not** use `7 - Resources/` as the default home for the actual product build.
+
+## Report storage convention
+
+For important reports, prefer a dedicated folder named after the report.
+
+Examples:
+
+- `7 - Resources/reports/agent-memory-youtube-study-2026-04-23/`
+- `5 - Projects/IMatch/reports/market-validation-round-1/`
+
+Inside the folder, prefer names like:
+
+- `report.md` — canonical markdown summary
+- `index.html` — renderable/shareable HTML version
+- optional assets such as images, exported PDFs, graph data, or attachments
+
+This keeps multi-file report outputs grouped and easier to version.
 
 ## When a project can live inside Betty Brain
 

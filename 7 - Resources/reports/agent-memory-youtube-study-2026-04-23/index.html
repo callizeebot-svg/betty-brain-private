@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agent Memory Study vs Betty Brain</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121936;
+      --panel2: #182149;
+      --text: #eef2ff;
+      --muted: #b8c0ea;
+      --line: #32417f;
+      --accent: #7cc4ff;
+      --accent2: #8ef0c1;
+      --warn: #ffcc7a;
+      --danger: #ff9f9f;
+      --good: #9af5b4;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, Segoe UI, Arial, sans-serif;
+      background: linear-gradient(180deg, #08101d, #0e1630 28%, #0a1020 100%);
+      color: var(--text);
+      line-height: 1.45;
+    }
+    a { color: var(--accent); }
+    .wrap {
+      width: min(1400px, calc(100vw - 32px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    .hero {
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: radial-gradient(circle at top right, rgba(124,196,255,.16), transparent 32%), var(--panel);
+      box-shadow: 0 10px 35px rgba(0,0,0,.25);
+    }
+    .eyebrow { color: var(--accent2); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+    h1, h2, h3 { margin: 0 0 12px; }
+    h1 { font-size: 34px; line-height: 1.1; }
+    h2 { font-size: 22px; margin-top: 28px; }
+    h3 { font-size: 16px; margin-top: 18px; }
+    p, li { color: var(--muted); }
+    .grid { display: grid; gap: 16px; }
+    .kpis { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 18px; }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+    }
+    .kpi { background: var(--panel2); }
+    .kpi .v { font-size: 28px; font-weight: 800; color: var(--text); }
+    .kpi .l { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+    .two { grid-template-columns: 1.2fr .8fr; margin-top: 18px; }
+    .pill {
+      display: inline-block;
+      padding: 4px 10px;
+      border: 1px solid var(--line);
+      background: rgba(124,196,255,.08);
+      border-radius: 999px;
+      margin: 4px 6px 0 0;
+      font-size: 12px;
+      color: var(--text);
+    }
+    .good { color: var(--good); }
+    .warn { color: var(--warn); }
+    .bad { color: var(--danger); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+    th, td {
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      padding: 12px 10px;
+      color: var(--muted);
+    }
+    th { color: var(--text); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
+    .small { font-size: 12px; color: var(--muted); }
+    .section { margin-top: 20px; }
+    .graph-wrap {
+      background: linear-gradient(180deg, rgba(124,196,255,.06), rgba(255,255,255,.02));
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      padding: 10px;
+    }
+    svg { width: 100%; height: auto; display: block; }
+    .legend { display:flex; gap:16px; flex-wrap:wrap; margin-top:8px; }
+    .legend span::before { content:''; display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:8px; vertical-align:middle; }
+    .n-betty::before { background:#8ef0c1; }
+    .n-theme::before { background:#7cc4ff; }
+    .n-video::before { background:#c8b3ff; }
+    .sources li { margin-bottom: 8px; }
+    @media (max-width: 980px) {
+      .kpis, .two { grid-template-columns: 1fr; }
+      h1 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="eyebrow">NotebookLM-style report</div>
+      <h1>Agent Memory YouTube Study vs Betty Brain</h1>
+      <p>
+        I searched YouTube for agent-memory material, reviewed the top result cluster, and compared the strongest ideas against Betty Brain’s current design.
+        This is a human-readable study page with a report, ranked table, and knowledge graph.
+      </p>
+      <div class="grid kpis">
+        <div class="card kpi"><div class="v">10</div><div class="l">Videos reviewed</div></div>
+        <div class="card kpi"><div class="v">3</div><div class="l">Search queries merged</div></div>
+        <div class="card kpi"><div class="v">6</div><div class="l">Repeated memory themes</div></div>
+        <div class="card kpi"><div class="v">High</div><div class="l">Betty relevance</div></div>
+      </div>
+    </section>
+
+    <section class="grid two section">
+      <div class="card">
+        <h2>Executive summary</h2>
+        <p>The strongest videos converge on one idea: serious agents need <strong>layered memory</strong>, not just longer prompts.</p>
+        <ul>
+          <li><strong>Consensus:</strong> split memory into short-term/session memory, long-term/persistent memory, and structured state/notes.</li>
+          <li><strong>Strongest external ideas for Betty:</strong> context compaction, memory triggers, structured state injection, persistent retrieval, and safety/versioning around memory writes.</li>
+          <li><strong>Betty Brain’s edge:</strong> user-owned markdown memory, git history, inspectable logs, human-readable structure, and an orchestrator/helper model that already thinks in durable memory.</li>
+          <li><strong>Betty Brain’s main gap:</strong> the memory architecture is conceptually strong but still lighter on live retrieval automation, runtime memory tooling, and fully active recurring synthesis workflows.</li>
+        </ul>
+        <h3>Best-fit videos for Betty Brain</h3>
+        <p>
+          <span class="pill">OpenAI — Build Hour: Agent Memory Patterns</span>
+          <span class="pill">Google Cloud Tech — Sessions &amp; State Explained</span>
+          <span class="pill">IBM Technology — Agentic Storage</span>
+          <span class="pill">rah app — Build Your Own AI Memory System</span>
+          <span class="pill">LangChain — Memory for agents</span>
+        </p>
+      </div>
+      <div class="card">
+        <h2>Method</h2>
+        <p>I merged three YouTube searches:</p>
+        <ul>
+          <li><code>agent memory ai agents</code></li>
+          <li><code>llm agent memory</code></li>
+          <li><code>memory for ai agents</code></li>
+        </ul>
+        <p>Then I ranked videos by recurrence and search position, and reviewed titles, descriptions, length, and source framing.</p>
+        <h3>Betty Brain snapshot</h3>
+        <ul>
+          <li class="good"><strong>Strength:</strong> durable external memory already exists</li>
+          <li class="good"><strong>Strength:</strong> human-editable + git-versioned</li>
+          <li class="good"><strong>Strength:</strong> clear memory layers and governance</li>
+          <li class="warn"><strong>Gap:</strong> semantic retrieval/indexing is not fully live</li>
+          <li class="warn"><strong>Gap:</strong> helper skill wrappers are documented more than wired</li>
+          <li class="warn"><strong>Gap:</strong> recurring memory-maintenance workflows are only partly activated</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card section">
+      <h2>What the video set says agent memory should include</h2>
+      <table>
+        <thead>
+          <tr><th>Theme</th><th>What the videos push</th><th>Betty Brain status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Short-term memory</td><td>Sessions, event logs, working state, trimmed context</td><td class="good">Partly present via OpenClaw sessions, logs, and explicit context budgeting</td></tr>
+          <tr><td>Long-term memory</td><td>Persistent notes, semantic retrieval, user facts, episodic and semantic stores</td><td class="good">Strong markdown-first foundation; <span class="warn">retrieval automation still light</span></td></tr>
+          <tr><td>Context engineering</td><td>Summaries, compaction, context triggers, state injection</td><td class="warn">Recognized and documented; not yet deeply operationalized end to end</td></tr>
+          <tr><td>Knowledge ownership</td><td>External corpus you own, not just chat history</td><td class="good">This is one of Betty Brain’s biggest advantages</td></tr>
+          <tr><td>Learning/adaptation</td><td>Agents should improve from past interactions and write back useful abstractions</td><td class="warn">Partly present through logs + memory curation, but not yet systematic learning loops</td></tr>
+          <tr><td>Safety/versioning</td><td>Immutable history, guardrails, controlled memory writes</td><td class="good">Git + explicit governance is unusually strong here</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card section">
+      <h2>Top 10 videos</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th><th>Video</th><th>Channel</th><th>Length</th><th>Main angle</th><th>Betty fit</th><th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Memory in AI agents</td><td>Google Cloud Tech</td><td>4m 34s</td><td>Short/working/long-term memory overview</td><td class="good">High</td><td><a href="https://www.youtube.com/watch?v=UF230UuclZM" target="_blank">watch</a></td></tr>
+          <tr><td>2</td><td>AI Agent Memory: Building Self-Improving Agents</td><td>Microsoft Developer</td><td>13m 21s</td><td>Self-improvement + memory tooling</td><td class="good">High</td><td><a href="https://www.youtube.com/watch?v=QrYbHesIxpw" target="_blank">watch</a></td></tr>
+          <tr><td>3</td><td>How memory makes AI agents more effective</td><td>Google Cloud Tech</td><td>9m 37s</td><td>Stateful interactions + context engineering</td><td class="good">High</td><td><a href="https://www.youtube.com/watch?v=52xTxeqT4ws" target="_blank">watch</a></td></tr>
+          <tr><td>4</td><td>AI Agents 6 - Memory, Learning, and Adapation</td><td>Prof. Ghassemi Lectures and Tutorials</td><td>37m 38s</td><td>Academic taxonomy: semantic / episodic / procedural + RL/DPO</td><td class="good">High</td><td><a href="https://www.youtube.com/watch?v=fRaYh3ma2Rc" target="_blank">watch</a></td></tr>
+          <tr><td>5</td><td>What Is Agentic Storage? Solving AI’s Limits with LLMs &amp; MCP</td><td>IBM Technology</td><td>7m 45s</td><td>Persistent storage, RAG, MCP, safety/versioning</td><td class="good">High</td><td><a href="https://www.youtube.com/watch?v=TjvT9sI5mLE" target="_blank">watch</a></td></tr>
+          <tr><td>6</td><td>How to add short-term memory to your AI agent (Sessions &amp; State Explained)</td><td>Google Cloud Tech</td><td>6m 03s</td><td>Session memory, events, state</td><td class="good">Very high</td><td><a href="https://www.youtube.com/watch?v=vfVcDUCucSs" target="_blank">watch</a></td></tr>
+          <tr><td>7</td><td>Memory for agents (conceptual video)</td><td>LangChain</td><td>6m 47s</td><td>Portable conceptual model of agent memory</td><td class="good">Very high</td><td><a href="https://www.youtube.com/watch?v=JTL0yp85FsE" target="_blank">watch</a></td></tr>
+          <tr><td>8</td><td>Build Your Own AI Memory System (local and FREE), takes 10 mins</td><td>rah app</td><td>36m 59s</td><td>Owned external context corpus + graph + MCP</td><td class="good">Very high</td><td><a href="https://www.youtube.com/watch?v=YyUCGigZIZE" target="_blank">watch</a></td></tr>
+          <tr><td>9</td><td>Build Hour: Agent Memory Patterns</td><td>OpenAI</td><td>57m 44s</td><td>Compaction, summarization, state injection, memory triggers</td><td class="good">Extremely high</td><td><a href="https://www.youtube.com/watch?v=WsGVXiWzTpI" target="_blank">watch</a></td></tr>
+          <tr><td>10</td><td>AWS re:Invent 2025 - Beyond a Chatbot: How to Build Intelligent Agent Memory</td><td>AWS Events</td><td>57m 39s</td><td>Unified memory provider + enterprise architecture</td><td class="good">High</td><td><a href="https://www.youtube.com/watch?v=asWTC3oc-SA" target="_blank">watch</a></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card section">
+      <h2>Betty Brain strengths vs weaknesses</h2>
+      <table>
+        <thead>
+          <tr><th>Area</th><th>Strength</th><th>Weakness / gap</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Memory ownership</td><td class="good">Betty stores durable memory in user-owned markdown files, not in opaque chat history.</td><td class="warn">The content corpus is still early; the architecture is ahead of the actual memory density.</td></tr>
+          <tr><td>Versioning</td><td class="good">Git history is a real advantage. Few public agent-memory setups treat version control as first-class memory safety.</td><td class="warn">Versioning is now documented well, but it still depends on disciplined execution rather than full automation.</td></tr>
+          <tr><td>Human inspectability</td><td class="good">Obsidian + repo notes + logs make memory visible and editable.</td><td class="warn">Manual structure can create friction compared with fully managed memory services.</td></tr>
+          <tr><td>Context cost control</td><td class="good">Betty now has an explicit strategy for targeted retrieval and helper sessions.</td><td class="warn">Live compaction and memory-trigger automation are not yet deeply wired into all flows.</td></tr>
+          <tr><td>Long-term memory model</td><td class="good">The layered model (journal, logs, projects, MEMORY, operations) is stronger than many single-store tutorials.</td><td class="warn">Semantic retrieval/indexing is not yet a fully verified live path.</td></tr>
+          <tr><td>Short-term runtime memory</td><td class="good">OpenClaw session context plus helper session strategy gives a workable short-term layer.</td><td class="warn">It is not yet as explicitly tooled as the sessions/events/state patterns shown in Google ADK videos.</td></tr>
+          <tr><td>Safety and governance</td><td class="good">Betty-governed root files and helper boundaries are a serious architectural advantage.</td><td class="warn">Hard technical enforcement is still lighter than the policy/docs layer.</td></tr>
+          <tr><td>Skill/runtime wiring</td><td class="good">The repo documents canonical skill logic and wrapper strategy.</td><td class="warn">Some Betty-specific skills are documented but not fully wired into runtime discovery yet.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card section">
+      <h2>What Betty should copy next from this study</h2>
+      <ol>
+        <li><strong>Formalize session/state memory:</strong> make short-term runtime state more explicit, not just implied by chat/session history.</li>
+        <li><strong>Add retrieval triggers:</strong> decide when to search notes, when to summarize, and when to write back.</li>
+        <li><strong>Make compaction operational:</strong> convert “context budgeting” from guidance into active behavior.</li>
+        <li><strong>Strengthen long-term retrieval:</strong> wire a verified semantic index or equivalent retrieval path on top of the markdown brain.</li>
+        <li><strong>Upgrade memory quality control:</strong> add more systematic review loops for contradictions, stale facts, and note promotion.</li>
+      </ol>
+    </section>
+
+    <section class="section">
+      <h2>Knowledge graph</h2>
+      <div class="graph-wrap">
+        <svg viewBox="0 0 1200 700" role="img" aria-label="Knowledge graph linking Betty Brain, memory themes, and top videos">
+          <defs>
+            <style>
+              .line{stroke:#4153a6;stroke-width:2;opacity:.8}
+              .line2{stroke:#2d7ab7;stroke-width:2;opacity:.7}
+              .betty{fill:#8ef0c1;stroke:#d9fff0;stroke-width:2}
+              .theme{fill:#7cc4ff;stroke:#dff2ff;stroke-width:2}
+              .video{fill:#c8b3ff;stroke:#eee6ff;stroke-width:1.5}
+              .t1{font:700 18px Inter,Segoe UI,Arial,sans-serif;fill:#06101b}
+              .t2{font:600 13px Inter,Segoe UI,Arial,sans-serif;fill:#06101b}
+              .tv{font:600 12px Inter,Segoe UI,Arial,sans-serif;fill:#eef2ff}
+            </style>
+          </defs>
+          <line class="line" x1="600" y1="350" x2="290" y2="120" />
+          <line class="line" x1="600" y1="350" x2="285" y2="560" />
+          <line class="line" x1="600" y1="350" x2="600" y2="90" />
+          <line class="line" x1="600" y1="350" x2="600" y2="605" />
+          <line class="line" x1="600" y1="350" x2="930" y2="150" />
+          <line class="line" x1="600" y1="350" x2="935" y2="555" />
+
+          <line class="line2" x1="290" y1="120" x2="120" y2="55" />
+          <line class="line2" x1="290" y1="120" x2="115" y2="165" />
+          <line class="line2" x1="285" y1="560" x2="110" y2="515" />
+          <line class="line2" x1="285" y1="560" x2="125" y2="635" />
+          <line class="line2" x1="600" y1="90" x2="470" y2="25" />
+          <line class="line2" x1="600" y1="90" x2="730" y2="25" />
+          <line class="line2" x1="600" y1="605" x2="470" y2="675" />
+          <line class="line2" x1="600" y1="605" x2="730" y2="675" />
+          <line class="line2" x1="930" y1="150" x2="1085" y2="90" />
+          <line class="line2" x1="930" y1="150" x2="1080" y2="225" />
+          <line class="line2" x1="935" y1="555" x2="1080" y2="500" />
+          <line class="line2" x1="935" y1="555" x2="1085" y2="625" />
+
+          <circle class="betty" cx="600" cy="350" r="78" />
+          <text class="t1" x="600" y="338" text-anchor="middle">Betty Brain</text>
+          <text class="t2" x="600" y="362" text-anchor="middle">markdown memory</text>
+          <text class="t2" x="600" y="382" text-anchor="middle">git + orchestration</text>
+
+          <circle class="theme" cx="290" cy="120" r="58" /><text class="t2" x="290" y="115" text-anchor="middle">Short-term</text><text class="t2" x="290" y="134" text-anchor="middle">state &amp; sessions</text>
+          <circle class="theme" cx="285" cy="560" r="58" /><text class="t2" x="285" y="555" text-anchor="middle">Long-term</text><text class="t2" x="285" y="574" text-anchor="middle">persistent memory</text>
+          <circle class="theme" cx="600" cy="90" r="58" /><text class="t2" x="600" y="85" text-anchor="middle">Compaction</text><text class="t2" x="600" y="104" text-anchor="middle">context engineering</text>
+          <circle class="theme" cx="600" cy="605" r="58" /><text class="t2" x="600" y="600" text-anchor="middle">Learning</text><text class="t2" x="600" y="619" text-anchor="middle">adaptation loops</text>
+          <circle class="theme" cx="930" cy="150" r="58" /><text class="t2" x="930" y="145" text-anchor="middle">Knowledge</text><text class="t2" x="930" y="164" text-anchor="middle">ownership &amp; retrieval</text>
+          <circle class="theme" cx="935" cy="555" r="58" /><text class="t2" x="935" y="550" text-anchor="middle">Safety</text><text class="t2" x="935" y="569" text-anchor="middle">versioning &amp; guardrails</text>
+
+          <rect class="video" x="35" y="25" rx="14" ry="14" width="170" height="58" /><text class="tv" x="120" y="50" text-anchor="middle">Google Cloud</text><text class="tv" x="120" y="68" text-anchor="middle">Memory in AI agents</text>
+          <rect class="video" x="25" y="135" rx="14" ry="14" width="180" height="58" /><text class="tv" x="115" y="160" text-anchor="middle">Google Cloud</text><text class="tv" x="115" y="178" text-anchor="middle">Sessions &amp; State</text>
+
+          <rect class="video" x="20" y="485" rx="14" ry="14" width="180" height="58" /><text class="tv" x="110" y="510" text-anchor="middle">IBM Technology</text><text class="tv" x="110" y="528" text-anchor="middle">Agentic Storage</text>
+          <rect class="video" x="35" y="605" rx="14" ry="14" width="180" height="58" /><text class="tv" x="125" y="630" text-anchor="middle">LangChain</text><text class="tv" x="125" y="648" text-anchor="middle">Memory for agents</text>
+
+          <rect class="video" x="380" y="2" rx="14" ry="14" width="180" height="58" /><text class="tv" x="470" y="27" text-anchor="middle">OpenAI</text><text class="tv" x="470" y="45" text-anchor="middle">Agent Memory Patterns</text>
+          <rect class="video" x="640" y="2" rx="14" ry="14" width="180" height="58" /><text class="tv" x="730" y="27" text-anchor="middle">Google Cloud</text><text class="tv" x="730" y="45" text-anchor="middle">More effective with memory</text>
+
+          <rect class="video" x="380" y="646" rx="14" ry="14" width="180" height="44" /><text class="tv" x="470" y="673" text-anchor="middle">Microsoft — self-improving</text>
+          <rect class="video" x="640" y="646" rx="14" ry="14" width="180" height="44" /><text class="tv" x="730" y="673" text-anchor="middle">MSU lecture — learning</text>
+
+          <rect class="video" x="995" y="62" rx="14" ry="14" width="180" height="58" /><text class="tv" x="1085" y="87" text-anchor="middle">rah app</text><text class="tv" x="1085" y="105" text-anchor="middle">owned memory system</text>
+          <rect class="video" x="990" y="195" rx="14" ry="14" width="190" height="58" /><text class="tv" x="1085" y="220" text-anchor="middle">AWS re:Invent</text><text class="tv" x="1085" y="238" text-anchor="middle">unified memory provider</text>
+
+          <rect class="video" x="985" y="470" rx="14" ry="14" width="190" height="58" /><text class="tv" x="1080" y="495" text-anchor="middle">IBM</text><text class="tv" x="1080" y="513" text-anchor="middle">immutable versioning</text>
+          <rect class="video" x="995" y="602" rx="14" ry="14" width="180" height="58" /><text class="tv" x="1085" y="627" text-anchor="middle">Betty gap</text><text class="tv" x="1085" y="645" text-anchor="middle">hard guardrails still light</text>
+        </svg>
+      </div>
+      <div class="legend">
+        <span class="n-betty">Betty Brain</span>
+        <span class="n-theme">Theme node</span>
+        <span class="n-video">Video/source node</span>
+      </div>
+    </section>
+
+    <section class="card section">
+      <h2>Sources</h2>
+      <ol class="sources">
+        <li><a href="https://www.youtube.com/watch?v=UF230UuclZM" target="_blank">Google Cloud Tech — Memory in AI agents</a></li>
+        <li><a href="https://www.youtube.com/watch?v=QrYbHesIxpw" target="_blank">Microsoft Developer — AI Agent Memory: Building Self-Improving Agents</a></li>
+        <li><a href="https://www.youtube.com/watch?v=52xTxeqT4ws" target="_blank">Google Cloud Tech — How memory makes AI agents more effective</a></li>
+        <li><a href="https://www.youtube.com/watch?v=fRaYh3ma2Rc" target="_blank">Prof. Ghassemi Lectures and Tutorials — AI Agents 6</a></li>
+        <li><a href="https://www.youtube.com/watch?v=TjvT9sI5mLE" target="_blank">IBM Technology — What Is Agentic Storage?</a></li>
+        <li><a href="https://www.youtube.com/watch?v=vfVcDUCucSs" target="_blank">Google Cloud Tech — Sessions &amp; State Explained</a></li>
+        <li><a href="https://www.youtube.com/watch?v=JTL0yp85FsE" target="_blank">LangChain — Memory for agents</a></li>
+        <li><a href="https://www.youtube.com/watch?v=YyUCGigZIZE" target="_blank">rah app — Build Your Own AI Memory System</a></li>
+        <li><a href="https://www.youtube.com/watch?v=WsGVXiWzTpI" target="_blank">OpenAI — Build Hour: Agent Memory Patterns</a></li>
+        <li><a href="https://www.youtube.com/watch?v=asWTC3oc-SA" target="_blank">AWS Events — Beyond a Chatbot: How to Build Intelligent Agent Memory</a></li>
+      </ol>
+      <p class="small">Selection method: merged YouTube search-result clusters for three agent-memory queries and reviewed the highest recurring items. Actual NotebookLM export was not used; this is a NotebookLM-style synthesized study page.</p>
+    </section>
+  </div>
+</body>
+</html>
